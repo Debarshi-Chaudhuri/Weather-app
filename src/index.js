@@ -5,7 +5,7 @@ import './index.css';
 import Weather from './components/Weather';
 import * as serviceWorker from './serviceWorker';
 import {create_redux_store} from './store.js';
-import App from './App';
+
 const store=create_redux_store();
 
 ReactDOM.render(<Provider store={store}><Weather /></Provider>, document.getElementById('root'));

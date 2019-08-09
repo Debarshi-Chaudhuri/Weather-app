@@ -1,6 +1,7 @@
 import {Status} from './Status.js';
+import React from 'react';
 export const Country=(props)=>{
     return(<div>{
-    this.props.weather((item))
+    props.weather.map((item,index)=><Status description={item.description} others={props.others} index={index}/>)
     }</div>)
 }

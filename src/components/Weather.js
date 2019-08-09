@@ -3,11 +3,11 @@ import {connect} from 'react-redux'
 import {CountryList} from '../container/CountryList.js';
 import { bindActionCreators } from 'redux';
 import {onclick} from '../actions/action.js';
-
-//import {Country} from '../container/Country.js';
+import {Country} from '../container/Country.js';
 const mapStateToProps=(store)=>{
     return({
-        weather:store.weather
+        weather:store.weather,
+        others:store.others
     });
 }
 const mapDispatchToProps=(dispatch)=>{
@@ -20,6 +20,7 @@ class Weather extends Component{
         return(
             <div>
                 <CountryList onclick={this.props.onclick}/>
+                <Country weather={this.props.weather} others={this.props.others}/>
             </div>
         )
     }
