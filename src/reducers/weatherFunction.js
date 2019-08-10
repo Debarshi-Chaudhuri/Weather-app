@@ -1,6 +1,7 @@
 const initialState={
     weather:[],
-    others:{}
+    others:{},
+    status:true
 }
 export const weather=(state=initialState,action)=>{
     switch(action.type){
@@ -9,10 +10,15 @@ export const weather=(state=initialState,action)=>{
             action.payload.weather.pop();
                 return{
                     ...state,
+                    status:true,
                     weather:action.payload.weather,
                     others:action.payload
                 }
                 
+        case 'ERROR':
+                return{
+                    ...state,status:false
+                }
         default: return (state);
     }
 }

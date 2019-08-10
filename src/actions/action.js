@@ -4,7 +4,10 @@ export const onclick=(country)=>{
         (response)=>response.json()
     ).then(
         (json)=>{
-            console.log(json)
-            dispatch({type:'ON_CLICK',payload:json})
+            console.log(json);
+            dispatch({type:'ON_CLICK',payload:json});
+        }).catch((error)=>{
+            console.log(error);
+            dispatch({type:'ERROR'});
         })
 }
